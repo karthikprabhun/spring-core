@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--    <bean id="heart" class="com.kp.spring.learn_annotation.Heart"/>
+
+    &lt;!&ndash; Enable autowire using inline attribute and resolve byName,by Type & constructor. In this case annotation in the java side not required &ndash;&gt;
+    <bean id="human" class="com.kp.spring.learn_annotation.Human" autowire="byName" > </bean>
+    &lt;!&ndash;<bean id="human" class="com.kp.spring.learn_annotation.Human" autowire="byType" > </bean> &lt;!&ndash; when byType enabled, you can have different reference name in Human class&ndash;&gt;
+&ndash;&gt;
+    &lt;!&ndash; <bean id="human" class="com.kp.spring.learn_annotation.Human" autowire="constructor" > </bean>&ndash;&gt;-->
+
+
+    <!-- Activate autowire using below line or with inline attribute like above.-->
+    <context:annotation-config/>
+    <bean id="heart" class="com.kp.spring.learn_annotation.Heart"/>
+    <bean id="human" class="com.kp.spring.learn_annotation.Human" />
+
+    <!-- Below there are two bean, which autowire ( byType or byName ) is resolved ? Here, autowire failed by both byType ( becz there 2 bean defined with same type ) & Name ( name keyword is not matching in class) -->
+    <!-- Error thrown : Unsatisfied dependency expressed through method 'setHeart' parameter 0: No qualifying bean of type 'com.kp.spring.learn_annotation.Heart' available: expected single matching bean but found 2: humanHeart,octpousHeart -->
+    <!--To solve, we use @Qualifier in the setter method-->
+  <!--  <bean id="humanHeart" class="com.kp.spring.learn_annotation.Heart">
+        <property name="nameOfAnimal" value="Human"></property>
+        <property name="noOfHeart" value="1"></property>
+    </bean>
+    <bean id="octpousHeart" class="com.kp.spring.learn_annotation.Heart"/>-->
+
+    <!-- The below is same as Human human = new Human();  Human() is a default constructor. Do we have it in our class ? -->
+    <!--JVM will not use default constructor if you are overriding the constructor-->
+
+  <!--  <bean id="human" class="com.kp.spring.learn_annotation.Human"/>-->
+
+
+
+</beans>

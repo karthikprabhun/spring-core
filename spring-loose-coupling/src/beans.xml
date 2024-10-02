@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- Order is important :) else we will get bean not found exception -->
+
+    <bean id="kannadaCheat" class="com.kp.learn.example1.KannadaCheat">
+
+    </bean>
+    <bean id="englishCheat" class="com.kp.learn.example1.EnglishCheat">
+
+    </bean>
+
+    <bean id="student1" class="com.kp.learn.example1.Student">
+        <constructor-arg name="name" value="karthik"></constructor-arg>
+        <constructor-arg name="age" value="31"></constructor-arg>
+        <constructor-arg name="cheat"
+                         ref="kannadaCheat"></constructor-arg> <!-- without changing logic in main program we can any switch to Cheat type implementation -->
+    </bean>
+
+    <bean id="student2" class="com.kp.learn.example1.Student">
+        <property name="name" value="koushik"></property>
+
+        <property name="cheat" ref="englishCheat"></property>
+    </bean>
+
+    <!-- Example 2 bean configuration-->
+    <bean id="airtel" class="com.kp.learn.example2.Airtel">
+
+
+        <!-- Change class to other implementation such as HelloTuneService or MissedCallAlertService etc.
+            and run the main program to understand loose coupling achived using interfaces with Spring framework-->
+        <constructor-arg index="0">
+            <bean class="com.kp.learn.example2.DataService"></bean>
+        </constructor-arg>
+        <constructor-arg index="1" value="970021354142"/>
+    </bean>
+
+</beans>
