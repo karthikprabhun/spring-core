@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- <bean id="airtel" class="com.kp.learnspring.Airtel"></bean>
+     <bean id="vodafone" class="com.kp.learnspring.Vodafone"></bean>
+     <bean id="jio" class="com.kp.learnspring.Jio"></bean>-->
+
+    <bean id="sim" class="com.kp.learnspring.Airtel"></bean> <!--With this you dont have to change anything in class file to get different instance of class.
+     just change "Airtel" to "Jio" or any other to get that bean -->
+
+    <!--DI example - primitive type & object type -->
+    <!--DI using setter-->
+
+    <!--    Below there are example code which will create student bean and configure fields using setter/constructor method defined in the class
+
+    -->
+    <bean id="student7" class="com.kp.learnspring.Student">
+        <property name="name"
+                  value="marco"/> <!--Spring takes care of injecting values primitive ( in this case it is String ) using relevant setter method-->
+        <property name="age" value="21"/>
+        <property name="address" value="stuttguad"/>
+    </bean>
+
+
+    <bean id="exam1" class="com.kp.learnspring.Exam">
+        <constructor-arg
+                value="midterm"></constructor-arg>  <!--Spring takes care of injecting values internally using constructor-->
+        <property name="students">
+            <list>
+                <ref bean="student3"/> <!--Spring takes care of injecting object type internally using relevant setter method-->
+                <ref bean="student4"/>
+                <ref bean="student5"/>
+            </list>
+        </property>
+        <property name="subject" ref="math"></property>
+    </bean>
+
+    <bean id="math" class="com.kp.learnspring.Subject">
+        <constructor-arg name="id" value="SUB01"></constructor-arg>
+        <constructor-arg name="name" value="Mathematics"></constructor-arg>
+        <constructor-arg name="staff" value="Bhaskar"></constructor-arg>
+    </bean>
+
+
+    <bean id="exam2" class="com.kp.learnspring.Exam">
+        <constructor-arg value="finalterm"/>
+        <constructor-arg type="java.util.List">
+            <list>
+                <ref bean="student3"/>
+                <ref bean="student3"/>
+                <ref bean="student3"/>
+            </list>
+        </constructor-arg>
+
+    </bean>
+
+
+    <!--DI using constructor-->
+
+    <bean id="student3" class="com.kp.learnspring.Student">
+        <constructor-arg index="0" value="ashwini"/>
+        <constructor-arg index="1" value="15"/>
+        <constructor-arg index="2" value="mangalore"/>
+    </bean>
+
+    <bean id="student4" class="com.kp.learnspring.Student">
+        <constructor-arg index="0" value="disha"/>
+        <constructor-arg index="1" value="15"/>
+        <constructor-arg index="2" value="mangalore"/>
+    </bean>
+    <bean id="student5" class="com.kp.learnspring.Student">
+        <constructor-arg index="0" value="aparna"/>
+        <constructor-arg index="1" value="15"/>
+        <constructor-arg index="2" value="mangalore"/>
+    </bean>
+
+</beans>
