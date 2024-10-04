@@ -18,3 +18,8 @@ By define two bean with same type but different id. In this case name keyword sh
 
 10. Why use property to set heartName & noOfHeart ? Can Autowire in this case as this also dependency ? 
 @Autowire is only possible for object only and not primitive type ( int , String )
+
+## Task:
+1. How to create a bean to access JDBC connection.
+   --> Load JDBC driver, in my case mysql com.mysql.cj.jdbc.Driver
+   --> Get connection using driver manager uri method received from above step.

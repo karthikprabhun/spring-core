@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- Enabled annotation -->
+    <context:annotation-config></context:annotation-config>
+    <context:property-placeholder location="classpath:info.properties"></context:property-placeholder>
+
+    <bean id="student1" class="com.kplearn.spring_annotations.Student">
+        <!--<property name="name" value="Karthik"></property>
+        <property name="interestedCourse" value="Java"></property>
+        <property name="interestedGames" value="Swimming"></property>-->
+    </bean>
+    <bean id="jdbcConnection" class="com.kplearn.spring_annotations.JDBCConnection"/>
+
+
+
+
+</beans>
