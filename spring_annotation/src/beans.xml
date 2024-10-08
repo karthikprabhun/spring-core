@@ -11,10 +11,10 @@
 <!--    <bean id="heart" class="com.kp.spring.learn_annotation.Heart"/>
 
     &lt;!&ndash; Enable autowire using inline attribute and resolve byName,by Type & constructor. In this case annotation in the java side not required &ndash;&gt;
-    <bean id="human" class="com.kp.spring.learn_annotation.Human" autowire="byName" > </bean>
-    &lt;!&ndash;<bean id="human" class="com.kp.spring.learn_annotation.Human" autowire="byType" > </bean> &lt;!&ndash; when byType enabled, you can have different reference name in Human class&ndash;&gt;
+    <bean id="human" class="com.kp.spring.learn_annotation.Human" autowire="byName" />
+    &lt;!&ndash;<bean id="human" class="com.kp.spring.learn_annotation.Human" autowire="byType" /> &lt;!&ndash; when byType enabled, you can have different reference name in Human class&ndash;&gt;
 &ndash;&gt;
-    &lt;!&ndash; <bean id="human" class="com.kp.spring.learn_annotation.Human" autowire="constructor" > </bean>&ndash;&gt;-->
+    &lt;!&ndash; <bean id="human" class="com.kp.spring.learn_annotation.Human" autowire="constructor" />-->
 
 
     <!-- Activate autowire using below line or with inline attribute like above.-->

@@ -6,14 +6,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(" Spring Loose coupling example");
+        System.out.println("Spring Tight & Loose coupling demo. This demo we are using xml configuration to define beans");
 
 
-        Student student = new Student("ashwini",31,new EnglishCheat());
+        Student student = new Student("ashwini",31,new EnglishCheat()); // Tight coupling
 
         student.getCheat().cheating();
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml"); // Creates container with beans.xml configuration
         System.out.println("Config loaded");
 
         Student student2 = applicationContext.getBean("student1",Student.class);

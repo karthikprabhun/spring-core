@@ -7,30 +7,27 @@
 
     <!-- Order is important :) else we will get bean not found exception -->
 
-    <bean id="kannadaCheat" class="com.kp.learn.example1.KannadaCheat">
+    <bean id="kannadaCheat" class="com.kp.learn.example1.KannadaCheat"/>
+    <bean id="englishCheat" class="com.kp.learn.example1.EnglishCheat"/>
 
-    </bean>
-    <bean id="englishCheat" class="com.kp.learn.example1.EnglishCheat">
-
-    </bean>
-
+    <!-- DI using constructor -->
     <bean id="student1" class="com.kp.learn.example1.Student">
         <constructor-arg name="name" value="karthik"></constructor-arg>
         <constructor-arg name="age" value="31"></constructor-arg>
         <constructor-arg name="cheat"
-                         ref="kannadaCheat"></constructor-arg> <!-- without changing logic in main program we can any switch to Cheat type implementation -->
+                         ref="kannadaCheat"></constructor-arg> <!-- we can switch to any Cheat type implementation without making any changes in main program -->
     </bean>
 
+    <!-- DI using setter -->
     <bean id="student2" class="com.kp.learn.example1.Student">
         <property name="name" value="koushik"></property>
 
         <property name="cheat" ref="englishCheat"></property>
     </bean>
 
-    <!-- Example 2 bean configuration-->
+
+    <!-- Assignment - Example 2 bean configuration again DI using constructor-->
     <bean id="airtel" class="com.kp.learn.example2.Airtel">
-
-
         <!-- Change class to other implementation such as HelloTuneService or MissedCallAlertService etc.
             and run the main program to understand loose coupling achived using interfaces with Spring framework-->
         <constructor-arg index="0">
