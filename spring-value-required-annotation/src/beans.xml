@@ -15,7 +15,7 @@
         <property name="interestedCourse" value="Java"></property>
         <property name="interestedGames" value="Swimming"></property>-->
     </bean>
-    <bean id="jdbcConnection" class="com.kplearn.spring_annotations.JDBCConnection"/>
+    <bean id="jdbcConnection" class="com.kplearn.spring_annotations.StudentDAO"/>
 
 
 

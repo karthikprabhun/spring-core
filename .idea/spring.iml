@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/spring_annotation/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/spring-value-required-annotation/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/spring_core_annotation/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bean-life-cycle/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -75,5 +76,14 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="mysql-connector-j-8.4.0" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/jakarta.annotation-api-3.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

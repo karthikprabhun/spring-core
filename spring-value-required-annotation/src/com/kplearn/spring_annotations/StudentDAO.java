@@ -6,14 +6,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class JDBCConnection {
+public class StudentDAO {
 
     private String username;
     private String password;
     private String uri;
     private String driver;
 
-    public JDBCConnection(@Value("${database.username}") String username, @Value("${database.password}") String password, @Value("${database.uri}") String uri, @Value("${database.driver}") String driver) {
+    public StudentDAO(@Value("${database.username}") String username, @Value("${database.password}") String password, @Value("${database.uri}") String uri, @Value("${database.driver}") String driver) {
         this.username = username;
         this.password = password;
         this.uri = uri;

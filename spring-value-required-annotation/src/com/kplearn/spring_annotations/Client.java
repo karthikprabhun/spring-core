@@ -14,7 +14,7 @@ public class Client {
         student1.display();
 
         System.out.println("Get bean JDBC Connection");
-        JDBCConnection connection = applicationContext.getBean("jdbcConnection", JDBCConnection.class);
+        StudentDAO connection = applicationContext.getBean("jdbcConnection", StudentDAO.class);
         System.out.println(connection.toString());
         connection.getJDBCConnection();
 
